@@ -7,10 +7,10 @@ from employee import Employee
 # The class has 7 methods:
 #   First method: load_employees(), this method loads the employees "read" from the csv file. 
 #   Second method: store_employees(), this method store the employees "write" in the csv file. 
-#   Third method: add_employees(), this method adds an employee in the csv file.
-#   Fourth method: delete_employees(), this method deletes an employee from the csv file.
-#   Fifth method: update_employees(), this method updates the data of an employee in the csv file.
-#   Sixth method: search_employees(), this method searches for an employee in the csv file.
+#   Third method: add_employee(), this method adds an employee in the csv file.
+#   Fourth method: delete_employee(), this method deletes an employee from the csv file.
+#   Fifth method: update_employee(), this method updates the data of an employee in the csv file.
+#   Sixth method: search_employee(), this method searches for an employee in the csv file.
 #   Seventh method: list_employees(), this method lists all the employees in the csv file.
 
 
@@ -44,34 +44,47 @@ class EmployeeManager:
     
 
 
-    def add_employees(self, id, name, position, salary, email):
+    def add_employee(self, id, name, position, salary, email):
+        for emp in self.employees: 
+            if emp.id == id:  # checking if the id already exists
+                print("This id already exists.")
+                return  
         employee = Employee(id, name, position, salary, email)
         self.employees.append(employee)
         self.store_employees()
+        print("Employee added successfully.")
+
     
 
 
-    def delete_employees(self, id):
+    def delete_employee(self, id):
+        employee_exists = any(emp.id == id for emp in self.employees) 
+        if not employee_exists: 
+            print(f"Employee with ID {id} does not exist.") 
+            return 
         new_emp = []   # a new list to hold the remaining employees
         for emp in self.employees:
             if emp.id != id:
                 new_emp.append(emp)
         self.employees = new_emp    # updating the employees list to the new list
-        self.store_employees() 
+        self.store_employees()
+        print(f"Employee with ID {id} has been deleted.") 
+
     
 
 
-    def update_employees(self, id, name = None, position = None, salary = None, email = None):
+    def update_employee(self, id, name = None, position = None, salary = None, email = None):
         for emp in self.employees:
             if emp.id == id:
                 emp.update_data(name, position, salary, email)
                 self.store_employees()
-                return True
-        return False
+                print("Employee updated successfully.")
+                return
+        print("Employee was not found.")
     
 
 
-    def search_employees(self, id):
+    def search_employee(self, id):
         for emp in self.employees:
             if emp.id == id:
                 return emp
