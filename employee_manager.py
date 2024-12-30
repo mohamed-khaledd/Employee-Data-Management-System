@@ -2,16 +2,16 @@ import csv
 from employee import Employee
 
 
-#            EmployeeManager class description:
-# The class has 2 datafields which are file_name, employees "A list of employee"
-# The class has 7 methods:
-#   First method: load_employees(), this method loads the employees "read" from the csv file. 
-#   Second method: store_employees(), this method store the employees "write" in the csv file. 
-#   Third method: add_employee(), this method adds an employee in the csv file.
-#   Fourth method: delete_employee(), this method deletes an employee from the csv file.
-#   Fifth method: update_employee(), this method updates the data of an employee in the csv file.
-#   Sixth method: search_employee(), this method searches for an employee in the csv file.
-#   Seventh method: list_employees(), this method lists all the employees in the csv file.
+#  EmployeeManager class description:
+#  The class has 2 datafields which are file_name, employees "A list of employee"
+#  The class has 7 methods:
+#    First method: load_employees(), this method loads the employees "read" from the csv file. 
+#    Second method: store_employees(), this method store the employees "write" in the csv file. 
+#    Third method: add_employee(), this method adds an employee in the csv file.
+#    Fourth method: delete_employee(), this method deletes an employee from the csv file.
+#    Fifth method: update_employee(), this method updates the data of an employee in the csv file.
+#    Sixth method: search_employee(), this method searches for an employee in the csv file.
+#    Seventh method: list_employees(), this method lists all the employees in the csv file.
 
 
 
