@@ -1,7 +1,7 @@
 
-#            Employee class description:
-# The class has 5 datafields which are Id, Name, Position, Salary and Email
-# The class has 2 methods:
+#  Employee class description:
+#  The class has 5 datafields which are Id, Name, Position, Salary and Email
+#  The class has 2 methods:
 #    First method:  display_data(), this method displays the employee data
 #    Second method: update_data(), this method updates the employee data 
 
