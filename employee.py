@@ -1,4 +1,3 @@
-
 #  Employee class description:
 #  The class has 5 datafields which are Id, Name, Position, Salary and Email
 #  The class has 2 methods:
